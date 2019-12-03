@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<title>My Biodata</title>
 </head>
 
@@ -126,6 +127,21 @@
 			<p>Copyright &copy; Audrey Saudjhana 2019</p>
 	</footer>
 
-</body>
+	<script>
+		$(document).ready(function(){
+		  $("a").on('click', function(event) {
+		    if (this.hash !== "") {
+		      event.preventDefault();
+		      var hash = this.hash;
+		      $('html, body').animate({
+		        scrollTop: $(hash).offset().top
+		      }, 900, function(){
+		        location.hash = hash;
+		      });
+		    }
+		  });
+		});
+	</script>
 
+</body>
 </html>
